@@ -27,11 +27,27 @@ const WeatherDashboard = () => {
 
   if (locationError) {
     return (
-      <Alert>
+      <Alert variant="destructive">
         <AlertTriangle className="h-4 w-4" />
         <AlertTitle>Location Error</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
-          {locationError}
+          <p>{locationError}</p>
+          <Button onClick={getLocation} variant={"outline"} className="w-fit">
+            <MapPin className="mr-2 h-4 w-4" />
+            Enable Location
+          </Button>
+        </AlertDescription>
+      </Alert>
+    );
+  }
+
+  if (!coordinates) {
+    return (
+      <Alert variant="destructive">
+        <AlertTriangle className="h-4 w-4" />
+        <AlertTitle>Location Required</AlertTitle>
+        <AlertDescription className="flex flex-col gap-4">
+          <p>Please enable location access to see your local weather.</p>
           <Button onClick={getLocation} variant={"outline"} className="w-fit">
             <MapPin className="mr-2 h-4 w-4" />
             Enable Location
