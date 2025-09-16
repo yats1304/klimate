@@ -1,4 +1,5 @@
 import CurrentWeather from "@/components/current-weather";
+import { FavoriteButton } from "@/components/favourite.button";
 import HourlyTemperature from "@/components/hourly-temperature";
 import WeatherSkeleton from "@/components/loading-skeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -6,7 +7,6 @@ import WeatherDetails from "@/components/weather-details";
 import WeatherForecast from "@/components/weather-forecast";
 import { UseForecastQuery, UseWeatherQuery } from "@/hooks/use-waether";
 import { AlertTriangle } from "lucide-react";
-import React from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 
 const CityPage = () => {
@@ -41,7 +41,12 @@ const CityPage = () => {
         <h1 className="text-3xl font-bold tracking-tight">
           {params.cityName}, {weatherQuery.data.sys.country}
         </h1>
-        <div>{/* favourite button */}</div>
+        <div>
+          {/* favourite button */}
+          <FavoriteButton
+            data={{ ...weatherQuery.data, name: params.cityName }}
+          />
+        </div>
       </div>
       <div className="grid gap-6">
         <div className="flex flex-col gap-4">
