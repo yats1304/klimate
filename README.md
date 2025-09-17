@@ -164,7 +164,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Yatish Shashikant Chaubal**
 - GitHub: [@yats1304](https://github.com/yats1304)
 - LinkedIn: [Yatish Chaubal](https://linkedin.com/in/yatish-chaubal)
-- Email: yatishchaubal1304@gmail.com
+- Email: chaubaly@gmail.com
 - Mobile: +91 8551994340
 
 ## 🙏 Acknowledgments
